@@ -16,9 +16,15 @@
   <body>
     <div id="root"></div>
     <script>
-      const container = document.getElementById('root');
-      const reactElem = React.createElement('h1', null, 'Hello World');
-      ReactDOM.render(reactElem, container);
+      class App extends React.Component {
+        render() {
+          console.log(this.props);
+          return React.createElement('h1', { ...this.props }, 'Hello World');
+        }
+      }
+      const appElem = React.createElement(App, { title: 'dfgtrs' });
+      console.dir(appElem);
+      ReactDOM.render(appElem, document.getElementById('root'));
     </script>
   </body>
 </html>
