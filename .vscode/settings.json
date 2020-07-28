@@ -1,0 +1,9 @@
+{
+    "prettier.arrowParens": "avoid",
+    "prettier.proseWrap": "always",
+    "prettier.quoteProps": "consistent",
+    "prettier.singleQuote": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.autoSave": "onFocusChange"
+}
