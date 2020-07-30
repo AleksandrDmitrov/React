@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Greeting = props => {
-    const { name } = props;
-    return <div>Hello {name} </div>;
+const Aloha = props => {
+    const { name, isGreeting = true } = props;
+    return <div>
+        {isGreeting ? 'Hello' : 'Goodbye'} {name}
+         </div>;
 };
 
-export default Greeting;
+export default Aloha;
