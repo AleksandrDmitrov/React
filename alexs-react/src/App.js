@@ -5,31 +5,31 @@ class App extends Component {
   constructor(props){
     super(props);
 this.state = {
-  userName: 'anonymous',
-  isGreetingMode: true,
-  isVisible: false,
+  guests:[
+  {
+    firstName: 'Name1',
+    lastName: 'Surname1'
+  },
+  {
+    firstName: 'Name2',
+    lastName: 'Surname2'
+  },
+  {
+    firstName: 'Name3',
+    lastName: 'Surname3'
+  },]
 };
-  }
-
-  switchMode =()=>{
-    const {isGreetingMode, isVisible} = this.state;
-    this.setState({
-     isGreetingMode: !isGreetingMode,
-     isVisible: !isVisible,
-  })};
-
-  render(){
-    const { userName, isGreetingMode, isVisible } = this.state;
-    
-
-
-    return (
-      <>
-      {isVisible && <h1>Visible</h1>}
-      <button onClick={this.switchMode}>Change MODE</button>
-    <Aloha name={userName} isGreeting={isGreetingMode}/>
-      </> 
-  );
-  }
 }
+mapGuests = () =>
+this.state.guests.map(item =>(
+  <li>
+    <Aloha name={`${item.firstName} ${item.lastName}`}/>
+  </li>
+))
+
+render(){
+return <ul>{this.mapGuests()}</ul>
+}
+}
+
 export default App;
